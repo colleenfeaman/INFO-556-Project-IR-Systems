@@ -1,6 +1,18 @@
-# INFO-556-Project-IR-Systems
+# INFO 556 Project: IR Systems
+## A Comparative Analysis of IR Models for Book Search Systems
+Author: Colleen Feaman
 
 #### Purpose
-The purpose of this study is to answer the question, “Which search model performs best for book discovery?”. This project will develop and evaluate a book search system that will apply multiple classic information retrieval models, including Boolean, Vector Space Model (VSM), and probabilistic models, to retrieve relevant books based on user queries.
+The purpose of this study is to answer the question, “Which search model performs best for book discovery?”. This project develops and evaluates three information retrieval (IR) models for searching a large book dataset. Comparing how these different approaches perform in returning relevant results for user queries.
 
-In this project, the goal will be to analyze how different IR models perform in different search scenarios and create a system that will identify which model provides the most accurate and useful results for users. The searches will be based on topic, genre, author, or theme. 
+The IR Models:
+- Boolean Retrieval Model
+- Vector Space Model (TF-IDF)
+- BM25 Probabilistic Model
+
+The metrics for comparison:
+- Precision for accuracy of retrieved results
+- Recall for covereage of relevant docuemnts
+- nDCG for ranking quality
+
+
