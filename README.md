@@ -20,14 +20,39 @@ The metrics for comparison:
 ## Data
 The data used for this project can be found here: https://www.kaggle.com/datasets/saurabhbagchi/books-dataset
 
-There are three files in the dataset; however, `books.csv` is the only file used for this project.
+There are three files in the dataset; however, `books.csv` is the only file used for this project. The following is a list of book metadata from the CSV file that are used in this project:
+```text
+Book_Title
+Book_Author
+Year_Of_Publication
+Publisher
+```
+
+## Features/ Functions
+A list of features used in this project, in order:
+- Exploratory Data Analysis (EDA)
+- Book metadata preprocessing
+- Searchable text representation creation
+- Text normalization and tokenization
+- Inverted index construction
+- Boolean search model implementation
+- Vector Space Model (VSM) implementation
+- BM25 search model implementation
+- User query input and search testing
+- Top-k document retrieval
+- TREC-style pooling
+- Manual relevance labeling
+- Precision evaluation
+- Recall evaluation
+- nDCG evaluation
+- Aggregated model comparison and analysis
 
 
 ## Usage Instructions
 
 Key considerations:
 - The code for this project is tailored to the data file already in the repository
-- Cells where user input is intended are clearly captioned with `#USER INPUT`
+- Cells where user input is intended are clearly captioned with **#USER INPUT**
 
 Ensure the repository looks like this:
 ```text
@@ -45,14 +70,14 @@ INFO-556-PROJECT-IR-SYSTEMS/
     - See the first cell in that section captioned *"#Set evaluation queries"*
         - This cell is where you will add your set query terms for model evaluation
     - First, run all cells above that cell (this will load the libraries and data, and perform the EDA and preprocessing)
-    - Next, replace the red text in the cell using your own query terms, then run it
+    - Next, replace the red text in the cell using your own query terms. You could search for a publisher, an author, a genre, a book title, a publishing year, or any combination of terms. Once decided, run the cell.
         - *Note:* There are placeholders for three terms, but you can use as many or as few terms as you would like. For example:
         ```python
         queries = [
         "world war history",
-        "stephen king",
+        "stephen king 1978",
         "harry potter",
-        "financial management"
+        "Berkley Publishing Group"
         ]
         ```
 2. Run the following three cells
@@ -97,3 +122,33 @@ INFO-556-PROJECT-IR-SYSTEMS/
         - The last cell captioned *"#Average Retrieval Performance by Model"*
         - *Note:* Higher scores = better results
 
+
+### Optional Usage Instructions
+If you would simply like to test each model individually, you can do that.
+1. Open the `user-input.ipynb` file. 
+    - *Note:* Cells where user input is intended for this are clearly captioned with **"#Optional USER INPUT"**
+
+2. See the section titled *"Retrieval Models"* 
+    - You can start with any model here. You can choose to test all three, or whichever one you want.
+
+    Boolean:
+    - See the cell captioned *"#Test Boolean Search"*
+        - First, ensure you run all cells above this one
+        - This cell is where you can test the Boolean model. Update the red text with your selected query. For example:
+        ```python
+        boolean_search("romance 1990 1991")
+        ```
+    VSM:
+    - See the cell captioned *"#Test VSM"*
+        - First, ensure you run all cells above this one
+        - This cell is where you can test the VSM model. Update the red text with your selected query. For example:
+        ```python
+        vsm_search("harry potter")
+        ```
+    BM25:
+    - See the cell captioned *"#Test BM25"*
+        - First, ensure you run all cells above this one
+        - This cell is where you can test the BM25 model. Update the red text with your selected query. For example:
+        ```python
+        bm25_search("Berkley Publishing Group")
+        ```
